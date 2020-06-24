@@ -1,3 +1,0 @@
-//iteration
-
-//has own property

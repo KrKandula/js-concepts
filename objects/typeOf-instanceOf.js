@@ -8,6 +8,13 @@
 let arr = new Array(10);
 console.log(arr instanceof Array) //returns true
 console.log(arr instanceof Object) //return true, as Object exists in the prototype chain
+//**primitives instanceof Object returns false, 
+// null instanceof Object // false
+// undefined instanceof Object // false
+// 'wohoo' instanceof Object // false
+// 10 instanceOf Object //false
+// true instanceOf Object //false
+
 
 //typeof, return string
 str = 'hello'

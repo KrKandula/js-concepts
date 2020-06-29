@@ -23,6 +23,7 @@ function Car() {
 }
 const car1 = new Car();
 const car2 = new Car();
+console.log (car1.__proto__ === car2.__proto__) //true, their prototype object is the same
 
 car1.make='mercedes'; car1.model='c300'
 car2.make='honda'; car2.model='accord'
@@ -64,3 +65,13 @@ console.log(car2.features) //[a/c, 4door, turbo]
 //     this.features= ['a/c', '4 doors'],
 //     this.country= 'some country',
 // }
+
+//** by deleting the property on the instance, a reference to that object will go up the prototype chain
+console.log (car1); // car1.country == germany
+console.log (Car.prototype) 
+delete(car1.country)
+console.log(car1.country); //some country (from protype)
+
+//* if the prototype property is also deleted, then the value will be undefined
+delete(Car.prototype.country) // property on the protype is deleted
+console.log(car1.country) //undefined

@@ -6,6 +6,7 @@ console.log (arr) // ['b', 'i', 'g', 'b', 'a', 'n', 'g']
 arr = str.split();
 // If separator is omitted or does not occur in str, the returned array contains one element consisting of the entire string.
 console.log(arr) // ['bigbang']
+console.log(str.split('.')) // ['bigbang']
 
 arr = str.split('b');
 //If separator appears at the beginning (or end) of the string, it still has the effect of splitting.  The result is an empty (i.e. zero length) string, which appears at the first (or last) position of the returned array.

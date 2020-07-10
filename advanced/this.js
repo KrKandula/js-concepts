@@ -77,3 +77,31 @@ obj2 = {
     }
 }
 obj2.add()() // a + b is 3
+
+//setTimeout
+let obj = {
+    a: 1,
+    b: 2,
+    sum: function () {
+        setTimeout(function () {
+            console.log('a and b is', this.a, this.b);
+        }, 1000)
+    }
+}
+obj.sum(); //a and b is undefined undefined
+// sine setTimeout function runs in the window scope, this.a
+// ... and this.b will be undefined and undefined
+
+let obj = {
+    a: 1,
+    b: 2,
+    sum: function () {
+        setTimeout(() => console.log('a and b is', this.a, this.b), 1000)
+    }
+}
+obj.sum(); //a and b is 1 2
+// In the arrow function,
+// the value of this is that of its enclosing lexical context
+// as such the calling object will be used when evaluating 'this'
+
+//Similarly bind, apply, call have no impact on arrow functions

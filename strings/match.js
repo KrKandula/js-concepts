@@ -15,6 +15,12 @@ console.log (match.length) // ['A', 'I']
 match = 'A quick brown fox jumps over a brown lazy dog. It bit.'.match(/[A-Z]/);
 console.log (match) //no g, it is still an array, ['A'] , additional properties are available in array object like index, input
 
+// 4. using variable in the regex
+let animals = 'silver whale, yellow lion, gold fox'
+let goldFox = 'gold fox'
+regex = new RegExp(goldFox, 'ig')
+console.log (animals.match(goldFox)); //gold fox
+
 //groups
 console.log ('This image has a resolution of 1440x900 pixels.'.match(/([0-9]+)x([0-9]+)/) )
 //entire regex is matched first, the content matched in paranthesis will also get added to returned array
